@@ -150,13 +150,13 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/ruilin/Downloads/assignment2/missing aclocal-1.14
+ACLOCAL = ${SHELL} /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/missing aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} /home/ruilin/Downloads/assignment2/missing autoconf
-AUTOHEADER = ${SHELL} /home/ruilin/Downloads/assignment2/missing autoheader
-AUTOMAKE = ${SHELL} /home/ruilin/Downloads/assignment2/missing automake-1.14
-AWK = mawk
+AUTOCONF = ${SHELL} /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/missing autoconf
+AUTOHEADER = ${SHELL} /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/missing autoheader
+AUTOMAKE = ${SHELL} /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/missing automake-1.14
+AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
@@ -168,11 +168,11 @@ DEPDIR = .deps
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
-EGREP = /bin/grep -E
+EGREP = /usr/bin/grep -E
 EXEEXT = 
-FUSE_CFLAGS = -D_FILE_OFFSET_BITS=64 -I/usr/local/include/fuse  
-FUSE_LIBS = -pthread -L/usr/local/lib -lfuse  
-GREP = /bin/grep
+FUSE_CFLAGS = -D_FILE_OFFSET_BITS=64 -I/usr/include/fuse  
+FUSE_LIBS = -pthread -lfuse  
+GREP = /usr/bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -182,8 +182,8 @@ LDFLAGS =
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/ruilin/Downloads/assignment2/missing makeinfo
-MKDIR_P = /bin/mkdir -p
+MAKEINFO = ${SHELL} /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/missing makeinfo
+MKDIR_P = /usr/bin/mkdir -p
 OBJEXT = o
 PACKAGE = fuse-tutorial
 PACKAGE_BUGREPORT = 
@@ -197,13 +197,13 @@ PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
 PKG_CONFIG_PATH = 
 SET_MAKE = 
-SHELL = /bin/bash
+SHELL = /bin/sh
 STRIP = 
 VERSION = 2014-06-12
-abs_builddir = /home/ruilin/Downloads/assignment2/src
-abs_srcdir = /home/ruilin/Downloads/assignment2/src
-abs_top_builddir = /home/ruilin/Downloads/assignment2
-abs_top_srcdir = /home/ruilin/Downloads/assignment2
+abs_builddir = /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/src
+abs_srcdir = /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/src
+abs_top_builddir = /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3
+abs_top_srcdir = /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -222,7 +222,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/ruilin/Downloads/assignment2/install-sh
+install_sh = ${SHELL} /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -243,8 +243,8 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
 sfs_SOURCES = sfs.c  fuse.h  log.c	log.h  params.h  block.c  block.h
-AM_CFLAGS = -D_FILE_OFFSET_BITS=64 -I/usr/local/include/fuse  
-LDADD = -pthread -L/usr/local/lib -lfuse  
+AM_CFLAGS = -D_FILE_OFFSET_BITS=64 -I/usr/include/fuse  
+LDADD = -pthread -lfuse  
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 

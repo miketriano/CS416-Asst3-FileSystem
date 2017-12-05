@@ -29,7 +29,7 @@ FILE *log_open()
     
     // very first thing, open up the logfile and mark that we got in
     // here.  If we can't open the logfile, we're dead.
-    logfile = fopen("sfs.log", "w");
+    logfile = fopen("/ilab/users/mjt207/CS416-Asst3-FileSystem/sfs.log", "w");
     if (logfile == NULL) {
 	perror("logfile");
 	exit(EXIT_FAILURE);

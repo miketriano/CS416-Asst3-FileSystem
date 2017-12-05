@@ -23,12 +23,58 @@
 #include <unistd.h>
 #include <sys/types.h>
 
+// Extra system libraries
+#include <time.h>
+
 #ifdef HAVE_SYS_XATTR_H
 #include <sys/xattr.h>
 #endif
 
 #include "log.h"
 
+//typedef struct i_node inode;
+
+// Structure to represent a file or directory
+struct inode {
+    int key;
+    char *path;
+    struct stat *statbuf;
+    struct inode *next;
+	struct inode *child;
+};
+
+// Root directory
+struct inode *inode_head;
+
+struct inode *create_inode(const char *path, mode_t mode, int links) {
+	struct inode *new_inode = (struct inode*) malloc(sizeof(struct inode));
+	
+	new_inode->path = malloc(strlen(path) + 1);
+	strcpy(new_inode->path, path);
+	
+	new_inode->statbuf = (struct stat*) malloc(sizeof(struct stat));
+	new_inode->statbuf->st_mode = mode;
+	new_inode->statbuf->st_nlink = links;
+
+	new_inode->statbuf->st_atime = time(NULL);
+	new_inode->statbuf->st_mtime = time(NULL);
+	new_inode->statbuf->st_ctime = time(NULL);
+	
+	new_inode->next = NULL;
+	new_inode->child = NULL;
+	
+	return new_inode;
+}
+
+// Copy the contents of source into dest
+void swap(struct stat *source, struct stat *dest) {
+	dest->st_mode = source->st_mode;
+	dest->st_nlink = source->st_nlink;
+	
+	dest->st_atime = source->st_atime;
+	dest->st_mtime = source->st_mtime;
+	dest->st_ctime = source->st_ctime;
+}
 
 ///////////////////////////////////////////////////////////
 //
@@ -50,9 +96,12 @@ void *sfs_init(struct fuse_conn_info *conn)
 {
     fprintf(stderr, "in bb-init\n");
     log_msg("\nsfs_init()\n");
-    
+
     log_conn(conn);
     log_fuse_context(fuse_get_context());
+    
+    // Create the root directory
+	inode_head = create_inode("/", S_IFDIR, 2);
 
     return SFS_DATA;
 }
@@ -70,19 +119,47 @@ void sfs_destroy(void *userdata)
 }
 
 /** Get file attributes.
- *
  * Similar to stat().  The 'st_dev' and 'st_blksize' fields are
  * ignored.  The 'st_ino' field is ignored except if the 'use_ino'
  * mount option is given.
  */
 int sfs_getattr(const char *path, struct stat *statbuf)
 {
-    int retstat = 0;
+	// Error code for no such file or directory
+    int retstat = -ENOENT;
+ 
     char fpath[PATH_MAX];
     
     log_msg("\nsfs_getattr(path=\"%s\", statbuf=0x%08x)\n",
 	  path, statbuf);
     
+    memset(statbuf, 0, sizeof(struct stat));
+
+	struct inode *inode_current = inode_head;
+
+	// Search for the inode whose path matches the one requested
+	while (inode_current != NULL) {
+		
+		// Found the node
+		if (strcmp(path, inode_current->path) == 0) {
+			swap(inode_current->statbuf, statbuf);
+			return 0;
+		}
+		
+		// Node is in directory
+		log_msg("\nChecking if %s contains %s", path, inode_current->path);
+		if (strncmp(inode_current->path, path, strlen(inode_current->path)) == 0) {
+			if (inode_current->child == NULL) {
+				log_msg("\nError: child is null\n");
+			}
+			inode_current = inode_current->child;
+		}
+		
+		else {
+			inode_current = inode_current->next;
+		}
+	}
+
     return retstat;
 }
 
@@ -103,8 +180,41 @@ int sfs_create(const char *path, mode_t mode, struct fuse_file_info *fi)
     int retstat = 0;
     log_msg("\nsfs_create(path=\"%s\", mode=0%03o, fi=0x%08x)\n",
 	    path, mode, fi);
+   
+    struct inode *inode_current = inode_head;
     
     
+    while (1) {
+		
+		// Check child
+		if (strncmp(path, inode_current->path, strlen(inode_current->path)) == 0) {
+			
+			// Create child
+			if (inode_current->child == NULL) {
+				log_msg("\nCreating file %s\n", path);
+				inode_current->child = create_inode(path, S_IFREG, 1);
+				return retstat;
+			}
+			
+			// Move to child
+			inode_current = inode_current->child;
+			
+		}
+		
+		// Create next
+		if (inode_current->next == NULL) {
+			log_msg("\nCreating file %s\n", path);
+			inode_current->next = create_inode(path, S_IFREG, 1);
+			return retstat;
+			
+		// Move to next
+		} else {
+			inode_current = inode_current->next;
+		}
+		
+		
+	}
+	
     return retstat;
 }
 
@@ -114,6 +224,7 @@ int sfs_unlink(const char *path)
     int retstat = 0;
     log_msg("sfs_unlink(path=\"%s\")\n", path);
 
+    struct inode *inode_current = inode_head;
     
     return retstat;
 }
@@ -209,8 +320,40 @@ int sfs_mkdir(const char *path, mode_t mode)
     int retstat = 0;
     log_msg("\nsfs_mkdir(path=\"%s\", mode=0%3o)\n",
 	    path, mode);
-   
+       
+    struct inode *inode_current = inode_head;
     
+    while (1) {
+		
+		// Check child
+		if (strncmp(path, inode_current->path, strlen(inode_current->path)) == 0) {
+			
+			// Create child
+			if (inode_current->child == NULL) {
+				log_msg("\nCreating directory %s\n", path);
+				inode_current->child = create_inode(path, S_IFDIR, 1);
+				return retstat;
+			}
+			
+			// Move to child
+			inode_current = inode_current->child;
+			
+		}
+		
+		// Create next
+		if (inode_current->next == NULL) {
+			log_msg("\nCreating directory %s\n", path);
+			inode_current->next = create_inode(path, S_IFDIR, 1);
+			return retstat;
+			
+		// Move to next
+		} else {
+			inode_current = inode_current->next;
+		}
+		
+		
+	}
+    	
     return retstat;
 }
 
@@ -251,7 +394,7 @@ int sfs_opendir(const char *path, struct fuse_file_info *fi)
  *
  * The filesystem may choose between two modes of operation:
  *
- * 1) The readdir implementation ignores the offset parameter, and
+ * 1) The readdir implementation ignores the offset paraeter, and
  * passes zero to the filler function's offset.  The filler
  * function will not return '1' (unless an error happens), so the
  * whole directory is read in a single readdir operation.  This
@@ -268,9 +411,45 @@ int sfs_opendir(const char *path, struct fuse_file_info *fi)
 int sfs_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset,
 	       struct fuse_file_info *fi)
 {
+	log_msg("\nsfs_readdir(path=\"%s\", fi=0x%08x)\n",
+	  path, fi);
+	
     int retstat = 0;
+     
+    struct inode *inode_current = inode_head;
     
-    
+    struct inode *directory = NULL;
+
+	// Search for the inode whose path matches the one requested
+	while (inode_current != NULL) {
+		
+		// Found the node
+		if (strcmp(path, inode_current->path) == 0) {
+			directory = inode_current;
+			break;
+		}
+		
+		// Node is in directory
+		else if (strncmp(inode_current->path, path, strlen(inode_current->path)) == 0) {
+			inode_current = inode_current->child;
+		}
+		
+		else {
+			inode_current = inode_current->next;
+		}
+	}
+	
+	// If directory was found, add all the children
+	if (directory != NULL) {
+		directory = directory->child;
+		while (directory != NULL) {
+			char *name = strrchr(directory->path, '/');
+			filler(buf, name + 1, NULL, 0);
+			directory = directory->next;
+		}
+	}
+	
+    log_msg("\nsfs_readdir returned\n");
     return retstat;
 }
 
