@@ -377,3 +377,25 @@ sfs_open(path"/test2", fi=0x70cb4cf0)
 sfs_release(path="/test2", fi=0x6b7fdcf0)
 
 sfs_open(path"/test3", fi=0x6affccf0)
+
+sfs_release(path="/test3", fi=0x6bffecf0)
+
+sfs_getattr(path="/test1", statbuf=0x70cb4c40)
+
+sfs_getattr(path="/test2", statbuf=0x6b7fdc40)
+
+sfs_getattr(path="/test3", statbuf=0x6affcc40)
+
+sfs_getattr(path="/.gitattributes", statbuf=0x6bffec40)
+
+sfs_open(path"/test1", fi=0x70cb4cf0)
+
+sfs_read(path="/test1", buf=0x5c000f70, size=4096, offset=0, fi=0x6b7fdcf0)
+
+Read 4 bytes
+
+sfs_release(path="/test1", fi=0x6affccf0)
+
+sfs_getattr(path="/", statbuf=0x6bffec10)
+
+sfs_destroy(userdata=0x013aa010)
