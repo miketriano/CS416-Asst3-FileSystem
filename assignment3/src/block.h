@@ -10,9 +10,18 @@
 
 #define BLOCK_SIZE 512
 
+struct block {
+	int block_num;
+	int free;
+	struct block *next;
+};
+
 void disk_open(const char* diskfile_path);
 void disk_close();
 int block_read(const int block_num, void *buf);
 int block_write(const int block_num, const void *buf);
+
+struct block *create_block();
+struct block *get_free_block();
 
 #endif

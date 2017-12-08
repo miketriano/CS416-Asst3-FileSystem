@@ -15,6 +15,44 @@
 #include "block.h"
 
 int diskfile = -1;
+struct block *block_head;
+int current_block = 0;
+
+struct block *create_block() {
+	struct block *new_block = (struct block*) malloc(sizeof(struct block));
+	new_block->block_num = current_block;
+	new_block->free = 1;
+	new_block->next = NULL;
+	
+	current_block++;
+	
+	return new_block;
+}
+
+struct block *get_free_block() {
+	
+	if (block_head == NULL) {
+		block_head = create_block();
+	}
+	
+	struct block *block_current = block_head;
+	
+	while (block_current->next != NULL) {
+		if (block_current->free) {
+			block_current->free = 0;
+			return block_current;
+		}
+		block_current = block_current->next;
+	}
+	
+	if (block_current->free) {
+		block_current->free = 0;
+		return block_current;
+	}
+	
+	block_current->next = create_block();
+	return block_current->next;	
+}
 
 void disk_open(const char* diskfile_path)
 {
