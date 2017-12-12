@@ -8,7 +8,7 @@
 #ifndef _BLOCK_H_
 #define _BLOCK_H_
 
-#define BLOCK_SIZE 512
+#define BLOCK_SIZE 4096
 
 struct block {
 	int block_num;

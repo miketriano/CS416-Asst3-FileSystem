@@ -88,7 +88,7 @@ struct inode *find_inode(const char *path) {
 		
 		// Node is in directory
 		if (S_ISDIR(inode_current->statbuf->st_mode)) {
-			char *path_update = malloc(strlen(inode_current->path) + 2);
+			char *path_update = malloc(strlen(inode_current->path) + 1);
 			strcpy(path_update, inode_current->path);
 			path_update[strlen(inode_current->path)] = '/';
 			path_update[strlen(inode_current->path + 1)] = '\0';
@@ -96,6 +96,10 @@ struct inode *find_inode(const char *path) {
 			
 			if ((strncmp(inode_current->path, path, strlen(inode_current->path)) == 0)) {
 				inode_current = inode_current->child;
+			}
+			
+			else {
+				inode_current = inode_current->next;
 			}
 		}
 		
@@ -390,11 +394,14 @@ int sfs_read(const char *path, char *buf, size_t size, off_t offset, struct fuse
 		return retstat;
 	}
 
-	log_msg("\nAttempting to read %d bytes to file %s at block num #%d\n", inode_current->statbuf->st_size, diskfile_path, inode_current->blockk->block_num);
-
-	disk_open(diskfile_path);
-	block_read(inode_current->blockk->block_num, buf, inode_current->statbuf->st_size);
-	disk_close();
+	log_msg("\nAttempting to read %d bytes to file %s at block num #%d\n", size, diskfile_path, inode_current->blockk->block_num);
+   
+   	int diskfile = open(diskfile_path, O_CREAT|O_RDWR, S_IRUSR|S_IWUSR);
+    int block_num = inode_current->blockk->block_num;
+    retstat = pread(diskfile, buf, size, block_num*BLOCK_SIZE);
+	close(diskfile);
+	
+	log_msg("\nRead %d bytes\n", retstat);
    
     return retstat;
 }
@@ -426,13 +433,6 @@ int sfs_write(const char *path, const char *buf, size_t size, off_t offset,
     
     log_msg("\nAttempting to write %d bytes to file %s at block number #%d\n", size, diskfile_path, inode_current->blockk->block_num);
     
-    /*
-    // This gave errors
-    disk_open(diskfile_path);
-    block_write(inode_current->blockk->block_num, buf, size);
-	disk_close();
-	*/
-	
 	int diskfile = open(diskfile_path, O_CREAT|O_RDWR, S_IRUSR|S_IWUSR);
     int block_num = inode_current->blockk->block_num;
     retstat = pwrite(diskfile, buf, size, block_num*BLOCK_SIZE);
