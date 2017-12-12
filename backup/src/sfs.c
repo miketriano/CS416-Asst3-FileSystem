@@ -37,7 +37,6 @@ const char *diskfile_path;
 // Structure to represent a file or directory
 struct inode {
     char *path;
-    char *path_dir;
     struct stat *statbuf;
     struct inode *parent;
     struct inode *next;
@@ -54,13 +53,6 @@ struct inode *create_inode(const char *path, mode_t mode, int links, struct inod
 	
 	new_inode->path = malloc(strlen(path) + 1);
 	strcpy(new_inode->path, path);
-	
-	if (mode == S_IFDIR) {
-		new_inode->path_dir = malloc(strlen(path) + 2);
-		strcpy(new_inode->path_dir, path);
-		new_inode->path_dir[strlen(path)] = '/';
-		new_inode->path_dir[strlen(path) + 1] = '\0';
-	}
 	
 	new_inode->statbuf = (struct stat*) malloc(sizeof(struct stat));
 	new_inode->statbuf->st_mode = mode | S_IRWXU;
@@ -82,6 +74,14 @@ struct inode *create_inode(const char *path, mode_t mode, int links, struct inod
 	return new_inode;
 }
 
+char *append_path(const char* path) {
+	char *path_update = malloc((strlen(path) + 2) * sizeof(char));
+	strcpy(path_update, path);
+	path_update[strlen(path)] = '/';
+	path_update[strlen(path) + 1] = '\0';
+	log_msg("\n NEW PATH %s\n", path_update);
+}
+
 // Search for an inode matching path
 struct inode *find_inode(const char *path) {
 	struct inode *inode_current = inode_head;
@@ -99,15 +99,11 @@ struct inode *find_inode(const char *path) {
 			
 		// Node is in directory
 		if (S_ISDIR(inode_current->statbuf->st_mode)) {
-			
-			log_msg("\nCurrent node is a directory with path %s\n", inode_current->path_dir);
-			
-			int value = strncmp(inode_current->path_dir, path, strlen(inode_current->path_dir));
-			
-			log_msg("\nChecking if %s should go into %s value is %d\n", path, inode_current->path_dir, value);
-			
-			if (strncmp(inode_current->path_dir, path, strlen(inode_current->path_dir)) == 0) {
-				
+
+			if ((strncmp(inode_current->path, path, strlen(inode_current->path)) == 0) &&
+				(strlen(path) > strlen(inode_current->path)) &&
+				(path[strlen(inode_current->path)] == '/')) {
+					
 				inode_current = inode_current->child;
 			}
 			
@@ -134,18 +130,13 @@ int insert_inode(const char *path, mode_t mode) {
 		
 		// Check child
 		if (S_ISDIR(inode_current->statbuf->st_mode)) {
-						
-			log_msg("\nCurrent node is a directory with path %s\n", inode_current->path_dir);
-						
-			int value = strncmp(inode_current->path_dir, path, strlen(inode_current->path_dir));
-			
-			log_msg("\nChecking if %s should go into %s value is %d\n", path, inode_current->path_dir, value);
-			
-			if (strncmp(inode_current->path_dir, path, strlen(inode_current->path_dir)) == 0) {
-				
+			if ((strncmp(inode_current->path, path, strlen(inode_current->path)) == 0) &&
+				(strlen(path) > strlen(inode_current->path)) &&
+				(path[strlen(inode_current->path)] == '/')) {
+					
+					
 				// Create child
 				if (inode_current->child == NULL) {
-					log_msg("\nCreating %s as a child of %s\n", path, inode_current->path);
 					inode_current->child = create_inode(path, mode, 1, inode_current);
 					return 0;
 				} else {
@@ -247,7 +238,6 @@ void *sfs_init(struct fuse_conn_info *conn)
     
     // Create the root directory
 	inode_head = create_inode("/", S_IFDIR, 2, NULL);
-	inode_head->path_dir = inode_head->path;
 	
     return SFS_DATA;
 }

@@ -1,0 +1,2666 @@
+
+sfs_init()
+    conn:
+    proto_major = 7
+    proto_minor = 22
+    async_read = 1
+    max_write = 131072
+    max_readahead = 131072
+    capable = 00000ffb
+    want = 00000010
+    context:
+    fuse = 024f0510
+    uid = 0
+    gid = 0
+    pid = 0
+    private_data = 024f0010
+    logfile = 024f0030
+    diskfile = /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile
+    umask = 00000
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_getattr(path="/.Trash", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+sfs_readdir(path="/", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_getattr(path="/.xdg-volume-info", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.xdg-volume-info should go into / value is 0
+
+sfs_opendir(path="/", fi=0x166dac30)
+
+sfs_getattr(path="/autorun.inf", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /autorun.inf should go into / value is 0
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/AACS", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /AACS should go into / value is 0
+
+sfs_getattr(path="/BDSVM", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /BDSVM should go into / value is 0
+
+sfs_getattr(path="/BDMV", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /BDMV should go into / value is 0
+
+sfs_getattr(path="/BDMV", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /BDMV should go into / value is 0
+
+sfs_getattr(path="/BDMV", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /BDMV should go into / value is 0
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/autorun.inf", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /autorun.inf should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_getattr(path="/.Trash", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+sfs_readdir(path="/", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_getattr(path="/test1", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_create(path="/test1", mode=0100644, fi=0x15ed9cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Creating /test1 as a child of /
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c00)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+sfs_release(path="/test1", fi=0x15ed9cf0)
+
+sfs_getattr(path="/.Trash", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_getattr(path="/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_mkdir(path="/test2", mode=0755)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_getattr(path="/.Trash", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_getattr(path="/.hidden", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_opendir(path="/test2", fi=0x16edbc30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_readdir(path="/test2", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/test2", fi=0x15ed9c30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_readdir(path="/test2", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_opendir(path="/test2", fi=0x15ed9c30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_readdir(path="/test2", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_create(path="/test2/test123", mode=0100644, fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+Creating /test2/test123 as a child of /test2
+
+sfs_getattr(path="/test2/test123", statbuf=0x16edbc00)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_release(path="/test2/test123", fi=0x15ed9cf0)
+
+sfs_getattr(path="/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_opendir(path="/test2", fi=0x16edbc30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/.Trash", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/test2", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/.hidden", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/.hidden should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_getattr(path="/.Trash", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_opendir(path="/", fi=0x166dac30)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/test2", fi=0x166dac30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_readdir(path="/test2", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_opendir(path="/test2", fi=0x166dac30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/.Trash", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/test2", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_opendir(path="/test2", fi=0x15ed9c30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/.Trash", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/test2", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/.hidden", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/.hidden should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x16edbc10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/", fi=0x15ed9c30)
+
+sfs_readdir(path="/", fi=0x156d8c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test23 should go into /test2/ value is -4
+
+sfs_create(path="/test23", mode=0100644, fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test23 should go into /test2/ value is -4
+
+sfs_getattr(path="/test23", statbuf=0x16edbc00)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test23 should go into /test2/ value is -4
+
+sfs_release(path="/test23", fi=0x15ed9cf0)
+
+sfs_getattr(path="/", statbuf=0x156d8c10)
+
+sfs_getattr(path="/.Trash", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_getattr(path="/.hidden", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_getattr(path="/test2", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/4", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+
+sfs_create(path="/test2/4", mode=0100644, fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/4", statbuf=0x16edbc00)
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+
+sfs_release(path="/test2/4", fi=0x15ed9cf0)
+
+sfs_getattr(path="/test2", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_opendir(path="/test2", fi=0x156d8c30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/.Trash", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/test2", fi=0x15ed9c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/.hidden", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/.hidden should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/4", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_getattr(path="/", statbuf=0x156d8c10)
+
+sfs_opendir(path="/", fi=0x166dac30)
+
+sfs_getattr(path="/.Trash", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x156d8c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_getattr(path="/", statbuf=0x156d8c10)
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test23 should go into /test2/ value is -4
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_create(path="/test2/test2", mode=0100644, fi=0x15ed9cf0)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test2", statbuf=0x15ed9c00)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_release(path="/test2/test2", fi=0x156d8cf0)
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/test2", fi=0x156d8c30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/test2", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/.hidden", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2/.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/.hidden should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x16edbc10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/4", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_opendir(path="/", fi=0x15ed9c30)
+
+sfs_getattr(path="/.Trash", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test23 should go into /test2/ value is -4
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/test", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test should go into /test2/ value is 0
+
+sfs_create(path="/test2/test", mode=0100644, fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test2/test should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test", statbuf=0x16edbc00)
+
+Current node is a directory with path /
+
+Checking if /test2/test should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test should go into /test2/ value is 0
+
+sfs_release(path="/test2/test", fi=0x166dacf0)
+
+sfs_getattr(path="/test22", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test22 should go into /test2/ value is -3
+
+sfs_create(path="/test22", mode=0100644, fi=0x156d8cf0)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test22 should go into /test2/ value is -3
+
+sfs_getattr(path="/test22", statbuf=0x156d8c00)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test22 should go into /test2/ value is -3
+
+sfs_release(path="/test22", fi=0x16edbcf0)
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_getattr(path="/.hidden", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_open(path"/test2/test2", fi=0x156d8cf0)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_release(path="/test2/test2", fi=0x16edbcf0)
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/test22", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test22 should go into /test2/ value is 0
+
+sfs_create(path="/test2/test22", mode=0100644, fi=0x156d8cf0)
+
+Current node is a directory with path /
+
+Checking if /test2/test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test22 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test22", statbuf=0x156d8c00)
+
+Current node is a directory with path /
+
+Checking if /test2/test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test22 should go into /test2/ value is 0
+
+sfs_release(path="/test2/test22", fi=0x16edbcf0)
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/test2", fi=0x16edbc30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_getattr(path="/.Trash", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/test2", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/.hidden", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/.hidden should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/4", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test2", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/test should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test22", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test22 should go into /test2/ value is 0
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_opendir(path="/", fi=0x166dac30)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test23 should go into /test2/ value is -4
+
+sfs_getattr(path="/test22", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test22 should go into /test2/ value is -3
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_opendir(path="/", fi=0x156d8c30)
+
+sfs_getattr(path="/.Trash", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x15ed9c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test23 should go into /test2/ value is -4
+
+sfs_getattr(path="/test22", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test22 should go into /test2/ value is -3
+
+sfs_getattr(path="/", statbuf=0x156d8c10)
+
+sfs_opendir(path="/test2", fi=0x16edbc30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/.Trash", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/test2", fi=0x156d8c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/4", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/test should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test22", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test22 should go into /test2/ value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_getattr(path="/", statbuf=0x156d8c10)
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_getattr(path="/.Trash", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_readdir(path="/", fi=0x156d8c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_getattr(path="/", statbuf=0x156d8c10)
+
+sfs_getattr(path="/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test23 should go into /test2/ value is -4
+
+sfs_getattr(path="/test22", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test22 should go into /test2/ value is -3
+
+sfs_getattr(path="/test1", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_open(path"/test1", fi=0x15ed9cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_release(path="/test1", fi=0x16edbcf0)
+
+sfs_getattr(path="/test1", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_open(path"/test1", fi=0x15ed9cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_write(path="/test1", buf=0x17a84060, size=5, offset=0, fi=0x156d8d70)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to write 5 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block number #0
+
+Wrote 5 bytes
+
+sfs_release(path="/test1", fi=0x16edbcf0)
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_getattr(path="/test1", statbuf=0x16edbc10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_open(path"/test1", fi=0x15ed9cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_read(path="/test1", buf=0x00000d10, size=4096, offset=0, fi=0x156d8cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #0
+
+Read 5 bytes
+
+sfs_release(path="/test1", fi=0x16edbcf0)
+
+sfs_getattr(path="/test1", statbuf=0x166dac10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x15ed9c10)
+
+sfs_getattr(path="/test1", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_open(path"/test1", fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_read(path="/test1", buf=0x08000c10, size=4096, offset=0, fi=0x166dacf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #0
+
+Read 5 bytes
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_release(path="/test1", fi=0x156d8cf0)
+
+sfs_getattr(path="/test1", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_open(path"/test1", fi=0x166dacf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_write(path="/test1", buf=0x17aa6060, size=4, offset=5, fi=0x15ed9d70)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to write 4 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block number #0
+
+Wrote 4 bytes
+
+sfs_release(path="/test1", fi=0x156d8cf0)
+
+sfs_getattr(path="/", statbuf=0x16edbc10)
+
+sfs_getattr(path="/.Trash", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash should go into /test2/ value is 70
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.Trash-83167 should go into /test2/ value is 70
+
+sfs_getattr(path="/test1", statbuf=0x156d8c10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /.hidden should go into /test2/ value is 70
+
+sfs_open(path"/test1", fi=0x166dacf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_read(path="/test1", buf=0x0c000f90, size=4096, offset=0, fi=0x15ed9cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #0
+
+Read 5 bytes
+
+sfs_release(path="/test1", fi=0x156d8cf0)
+
+sfs_getattr(path="/test1", statbuf=0x16edbc10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/test1", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_open(path"/test1", fi=0x15ed9cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_read(path="/test1", buf=0x00000d10, size=4096, offset=0, fi=0x156d8cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #0
+
+Read 5 bytes
+
+sfs_getattr(path="/test1", statbuf=0x16edbc10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_release(path="/test1", fi=0x166dacf0)
+
+sfs_getattr(path="/test2", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/lolz", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+sfs_create(path="/test2/lolz", mode=0100644, fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/lolz", statbuf=0x16edbc00)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+sfs_write(path="/test2/lolz", buf=0x17ac8060, size=5, offset=0, fi=0x166dad70)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+Attempting to write 5 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block number #1
+
+Wrote 5 bytes
+
+sfs_release(path="/test2/lolz", fi=0x15ed9cf0)
+
+sfs_getattr(path="/test2", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/loolz", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/loolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/loolz should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_getattr(path="/test2/lolz", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+sfs_open(path"/test2/lolz", fi=0x156d8cf0)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+sfs_read(path="/test2/lolz", buf=0x10001620, size=4096, offset=0, fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #1
+
+Read 5 bytes
+
+sfs_getattr(path="/test2/lolz", statbuf=0x166dac10)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+sfs_release(path="/test2/lolz", fi=0x15ed9cf0)
+
+sfs_getattr(path="/", statbuf=0x156d8c10)
+
+sfs_getattr(path="/test2", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/test2", fi=0x166dac30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_readdir(path="/test2", fi=0x15ed9c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2", statbuf=0x16edbc10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/test2", fi=0x166dac30)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_readdir(path="/test2", fi=0x15ed9c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test2/test123", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+sfs_unlink(path="/test2/test123")
+
+Current node is a directory with path /
+
+Checking if /test2/test123 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test123 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/4", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+sfs_unlink(path="/test2/4")
+
+Current node is a directory with path /
+
+Checking if /test2/4 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/4 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test2", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+sfs_unlink(path="/test2/test2")
+
+Current node is a directory with path /
+
+Checking if /test2/test2 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test2 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test2/test should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test should go into /test2/ value is 0
+sfs_unlink(path="/test2/test")
+
+Current node is a directory with path /
+
+Checking if /test2/test should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/test22", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test2/test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test22 should go into /test2/ value is 0
+sfs_unlink(path="/test2/test22")
+
+Current node is a directory with path /
+
+Checking if /test2/test22 should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/test22 should go into /test2/ value is 0
+
+sfs_getattr(path="/test2/lolz", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+sfs_unlink(path="/test2/lolz")
+
+Current node is a directory with path /
+
+Checking if /test2/lolz should go into / value is 0
+
+Current node is a directory with path /test2/
+
+Checking if /test2/lolz should go into /test2/ value is 0
+
+sfs_getattr(path="/test2", statbuf=0x166dac10)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+sfs_rmdir(path="/test2")
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/", fi=0x156d8c30)
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+sfs_getattr(path="/test22", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_open(path"/test1", fi=0x156d8cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_read(path="/test1", buf=0x08000c30, size=4096, offset=0, fi=0x166dacf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #0
+
+Read 4096 bytes
+
+sfs_getattr(path="/test1", statbuf=0x16edbc10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_release(path="/test1", fi=0x15ed9cf0)
+
+sfs_getattr(path="/test2", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test2 should go into / value is 0
+
+sfs_opendir(path="/", fi=0x166dac30)
+
+sfs_readdir(path="/", fi=0x16edbc30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+sfs_getattr(path="/test22", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+sfs_getattr(path="/test1", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_open(path"/test1", fi=0x166dacf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_read(path="/test1", buf=0x100012d0, size=4096, offset=0, fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #0
+
+Read 4096 bytes
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_release(path="/test1", fi=0x156d8cf0)
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_getattr(path="/.Trash", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash should go into / value is 0
+
+sfs_getattr(path="/.Trash-83167", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.Trash-83167 should go into / value is 0
+
+sfs_readdir(path="/", fi=0x166dac30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.hidden", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.hidden should go into / value is 0
+
+sfs_open(path"/test1", fi=0x166dacf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_read(path="/test1", buf=0x100012d0, size=4096, offset=0, fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #0
+
+Read 4096 bytes
+
+sfs_release(path="/test1", fi=0x15ed9cf0)
+
+sfs_getattr(path="/test1", statbuf=0x156d8c10)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/", statbuf=0x166dac10)
+
+sfs_getattr(path="/test23", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+sfs_getattr(path="/test22", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+sfs_getattr(path="/.git", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /.git should go into / value is 0
+
+sfs_getattr(path="/.git", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /.git should go into / value is 0
+
+sfs_getattr(path="/.git", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.git should go into / value is 0
+
+sfs_getattr(path="/.git", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.git should go into / value is 0
+
+sfs_opendir(path="/", fi=0x16edbc30)
+
+sfs_readdir(path="/", fi=0x15ed9c30)
+
+sfs_readdir returned
+
+sfs_getattr(path="/test1", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_getattr(path="/.gitignore", statbuf=0x166dac40)
+
+Current node is a directory with path /
+
+Checking if /.gitignore should go into / value is 0
+
+sfs_getattr(path="/test23", statbuf=0x16edbc40)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+sfs_getattr(path="/test22", statbuf=0x15ed9c40)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+sfs_open(path"/test1", fi=0x16edbcf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+sfs_read(path="/test1", buf=0x0c000ef0, size=4096, offset=0, fi=0x15ed9cf0)
+
+Current node is a directory with path /
+
+Checking if /test1 should go into / value is 0
+
+Attempting to read 4096 bytes to file /ilab/users/mjt207/CS416-Asst3-FileSystem/assignment3/freespace/testfsfile at block num #0
+
+Read 4096 bytes
+
+sfs_getattr(path="/.gitattributes", statbuf=0x156d8c40)
+
+Current node is a directory with path /
+
+Checking if /.gitattributes should go into / value is 0
+
+sfs_release(path="/test1", fi=0x16edbcf0)
+
+sfs_open(path"/test22", fi=0x166dacf0)
+
+Current node is a directory with path /
+
+Checking if /test22 should go into / value is 0
+
+sfs_release(path="/test22", fi=0x15ed9cf0)
+
+sfs_open(path"/test23", fi=0x156d8cf0)
+
+Current node is a directory with path /
+
+Checking if /test23 should go into / value is 0
+
+sfs_release(path="/test23", fi=0x16edbcf0)
