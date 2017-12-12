@@ -51,6 +51,7 @@ struct block *get_free_block() {
 	}
 	
 	block_current->next = create_block();
+	block_current->next->free = 0;
 	return block_current->next;	
 }
 
@@ -79,10 +80,10 @@ void disk_close()
  * Read should return (1) exactly @BLOCK_SIZE when succeeded, or (2) 0 when the requested block has never been touched before, or (3) a negtive value when failed. 
  * In cases of error or return value equals to 0, the content of the @buf is set to 0.
  */
-int block_read(const int block_num, void *buf)
+int block_read(const int block_num, void *buf, size_t size)
 {
     int retstat = 0;
-    retstat = pread(diskfile, buf, BLOCK_SIZE, block_num*BLOCK_SIZE);
+    retstat = pread(diskfile, buf, size, block_num*BLOCK_SIZE);
     if (retstat <= 0){
 	memset(buf, 0, BLOCK_SIZE);
 	if(retstat<0)
@@ -96,10 +97,10 @@ int block_read(const int block_num, void *buf)
  *
  * Write should return exactly @BLOCK_SIZE except on error. 
  */
-int block_write(const int block_num, const void *buf)
+int block_write(const int block_num, const void *buf, size_t size)
 {
     int retstat = 0;
-    retstat = pwrite(diskfile, buf, BLOCK_SIZE, block_num*BLOCK_SIZE);
+    retstat = pwrite(diskfile, buf, size, block_num*BLOCK_SIZE);
     if (retstat < 0)
 	perror("block_write failed");
     

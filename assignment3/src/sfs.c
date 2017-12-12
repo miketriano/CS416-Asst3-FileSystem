@@ -47,7 +47,7 @@ struct inode {
 // Root directory
 struct inode *inode_head;
 
-
+// Create a new inode with the given parameters
 struct inode *create_inode(const char *path, mode_t mode, int links, struct inode *parent) {
 	struct inode *new_inode = (struct inode*) malloc(sizeof(struct inode));
 	
@@ -74,6 +74,7 @@ struct inode *create_inode(const char *path, mode_t mode, int links, struct inod
 	return new_inode;
 }
 
+// Search for an inode matching path
 struct inode *find_inode(const char *path) {
 	struct inode *inode_current = inode_head;
 	
@@ -86,9 +87,16 @@ struct inode *find_inode(const char *path) {
 		}
 		
 		// Node is in directory
-		if ((S_ISDIR(inode_current->statbuf->st_mode)) &&
-			(strncmp(inode_current->path, path, strlen(inode_current->path)) == 0)) {
-			inode_current = inode_current->child;
+		if (S_ISDIR(inode_current->statbuf->st_mode)) {
+			char *path_update = malloc(strlen(inode_current->path) + 2);
+			strcpy(path_update, inode_current->path);
+			path_update[strlen(inode_current->path)] = '/';
+			path_update[strlen(inode_current->path + 1)] = '\0';
+			log_msg("\n NEW PATH %s\n", path_update);
+			
+			if ((strncmp(inode_current->path, path, strlen(inode_current->path)) == 0)) {
+				inode_current = inode_current->child;
+			}
 		}
 		
 		else {
@@ -99,6 +107,7 @@ struct inode *find_inode(const char *path) {
 	return NULL;
 }
 
+// Finds the appropriate spot in the inode tree for the new inode and creates it
 int insert_inode(const char *path, mode_t mode) {
 	int retstat = -ENOENT;
 	
@@ -107,12 +116,12 @@ int insert_inode(const char *path, mode_t mode) {
     while (1) {
 		
 		// Check child
-		if (strncmp(path, inode_current->path, strlen(inode_current->path)) == 0) {
+		if ((S_ISDIR(inode_current->statbuf->st_mode)) &&
+		    (strncmp(path, inode_current->path, strlen(inode_current->path)) == 0)) {
 			
 			// Create child
 			if (inode_current->child == NULL) {
 				inode_current->child = create_inode(path, mode, 1, inode_current);
-				//print_directory(inode_head);
 				return 0;
 			}
 			
@@ -124,7 +133,6 @@ int insert_inode(const char *path, mode_t mode) {
 		// Create next
 		if (inode_current->next == NULL) {
 			inode_current->next = create_inode(path, mode, 1, inode_current);
-			//print_directory(inode_head);
 			return 0;
 			
 		// Move to next
@@ -136,9 +144,39 @@ int insert_inode(const char *path, mode_t mode) {
 	return retstat;
 }
 
+// Free inode's allocated memory
 void free_inode(struct inode *inode_current) {
+	if (inode_current->blockk != NULL) {
+		inode_current->blockk->free = 1;
+	}
+	
+	free(inode_current->path);
 	free(inode_current->statbuf);
 	free(inode_current);
+}
+
+// Searchs for an inode and deletes it
+int delete_inode(const char *path) {	
+	struct inode *inode_current = find_inode(path);
+
+	if (inode_current == NULL) {
+		return -1;
+	}
+
+	if (inode_current->parent->child != NULL && inode_current->parent->child - inode_current == 0) {
+		inode_current->parent->child = inode_current->next;
+	} else {
+		inode_current->parent->next = inode_current->next;
+	}
+
+	// Update the parent
+	if (inode_current->next != NULL) {
+		inode_current->next->parent = inode_current->parent;
+	}
+    
+    free_inode(inode_current);
+    
+    return 0;
 }
 
 // Copy the contents of source into dest
@@ -153,19 +191,6 @@ void swap(struct stat *source, struct stat *dest) {
 	dest->st_atime = source->st_atime;
 	dest->st_mtime = source->st_mtime;
 	dest->st_ctime = source->st_ctime;
-}
-
-void print_directory(struct inode *directory) {
-	log_msg("\nContents of %s: ", directory->path);
-	
-	directory = directory->child;
-	
-	while (directory != NULL) {
-		log_msg(" %s ", directory->path);
-		directory = directory->next;
-	}
-	
-	log_msg("\n");
 }
 
 ///////////////////////////////////////////////////////////
@@ -255,42 +280,8 @@ int sfs_create(const char *path, mode_t mode, struct fuse_file_info *fi)
     log_msg("\nsfs_create(path=\"%s\", mode=0%03o, fi=0x%08x)\n",
 	    path, mode, fi);
    
-    struct inode *inode_current = inode_head;
+    insert_inode(path, S_IFREG);
     
-    
-    while (1) {
-		
-		// Check child
-		if (strncmp(path, inode_current->path, strlen(inode_current->path)) == 0) {
-			
-			// Create child
-			if (inode_current->child == NULL) {
-				log_msg("\nCreating file %s\n", path);
-				inode_current->child = create_inode(path, S_IFREG, 1, inode_current);
-				print_directory(inode_head);
-				return retstat;
-			}
-			
-			// Move to child
-			inode_current = inode_current->child;
-			
-		}
-		
-		// Create next
-		if (inode_current->next == NULL) {
-			log_msg("\nCreating file %s\n", path);
-			inode_current->next = create_inode(path, S_IFREG, 1, inode_current);
-			print_directory(inode_head);
-			return retstat;
-			
-		// Move to next
-		} else {
-			inode_current = inode_current->next;
-		}
-		
-		
-	}
-	
     return retstat;
 }
 
@@ -300,6 +291,9 @@ int sfs_unlink(const char *path)
     int retstat = 0;
     log_msg("sfs_unlink(path=\"%s\")\n", path);
 
+	return delete_inode(path);
+	
+	/*
     struct inode *inode_current = find_inode(path);
 
 	log_msg("\nComparing %p with %p\n", inode_current->parent->child, inode_current);
@@ -315,8 +309,8 @@ int sfs_unlink(const char *path)
 	}
     
     free_inode(inode_current);
-    print_directory(inode_head);
     return retstat;
+    */
 }
 
 /** File open operation
@@ -336,11 +330,12 @@ int sfs_open(const char *path, struct fuse_file_info *fi)
 	    path, fi);
 
 	struct inode *inode_current = find_inode(path);
+	mode_t mode = inode_current->statbuf->st_mode;
 	
-	if (inode_current->statbuf->st_mode == S_IRWXU) {
+	if (mode == S_IFREG | S_IRWXU) {
 		retstat = 0;
 	}
-    retstat = 0;
+	
     return retstat;
 }
 
@@ -387,15 +382,19 @@ int sfs_read(const char *path, char *buf, size_t size, off_t offset, struct fuse
 
 	struct inode *inode_current = find_inode(path);
 	
-	if (inode_current->blockk != NULL) {
-		int diskfile = open(diskfile_path, O_CREAT|O_RDWR, S_IRUSR|S_IWUSR);
-		int block_num = inode_current->blockk->block_num;
-		retstat = pread(diskfile, buf, inode_current->statbuf->st_size, block_num*BLOCK_SIZE);
-		close(diskfile);
+	if (inode_current == NULL) {
+		return -1;
+	}
 	
-		log_msg("\nRead %d bytes\n", retstat);
+	if (inode_current->blockk == NULL) {
+		return retstat;
 	}
 
+	log_msg("\nAttempting to read %d bytes to file %s at block num #%d\n", inode_current->statbuf->st_size, diskfile_path, inode_current->blockk->block_num);
+
+	disk_open(diskfile_path);
+	block_read(inode_current->blockk->block_num, buf, inode_current->statbuf->st_size);
+	disk_close();
    
     return retstat;
 }
@@ -414,21 +413,31 @@ int sfs_write(const char *path, const char *buf, size_t size, off_t offset,
     int retstat = 0;
     log_msg("\nsfs_write(path=\"%s\", buf=0x%08x, size=%d, offset=%lld, fi=0x%08x)\n",
 	    path, buf, size, offset, fi);
-    
-    log_msg("\nWriting to file %s, buffer size %zu\n", diskfile_path, strlen(buf));
-    
+        
     struct inode *inode_current = find_inode(path);
-
+    
+    if (inode_current == NULL) {
+		return -1;
+	}
     
     if (inode_current->blockk == NULL) {
 		inode_current->blockk = get_free_block();
 	}
     
-    int diskfile = open(diskfile_path, O_CREAT|O_RDWR, S_IRUSR|S_IWUSR);
+    log_msg("\nAttempting to write %d bytes to file %s at block number #%d\n", size, diskfile_path, inode_current->blockk->block_num);
+    
+    /*
+    // This gave errors
+    disk_open(diskfile_path);
+    block_write(inode_current->blockk->block_num, buf, size);
+	disk_close();
+	*/
+	
+	int diskfile = open(diskfile_path, O_CREAT|O_RDWR, S_IRUSR|S_IWUSR);
     int block_num = inode_current->blockk->block_num;
     retstat = pwrite(diskfile, buf, size, block_num*BLOCK_SIZE);
 	close(diskfile);
-    
+
     inode_current->statbuf->st_size = size;
     
     log_msg("\nWrote %d bytes\n", retstat);    
@@ -443,42 +452,9 @@ int sfs_mkdir(const char *path, mode_t mode)
     int retstat = 0;
     log_msg("\nsfs_mkdir(path=\"%s\", mode=0%3o)\n",
 	    path, mode);
-       
-    struct inode *inode_current = inode_head;
-    
-    while (1) {
-		
-		// Check child
-		if (strncmp(path, inode_current->path, strlen(inode_current->path)) == 0) {
-			
-			// Create child
-			if (inode_current->child == NULL) {
-				log_msg("\nCreating directory %s\n", path);
-				print_directory(inode_head);
-				inode_current->child = create_inode(path, S_IFDIR, 1, inode_current);
-				return retstat;
-			}
-			
-			// Move to child
-			inode_current = inode_current->child;
-			
-		}
-		
-		// Create next
-		if (inode_current->next == NULL) {
-			log_msg("\nCreating directory %s\n", path);
-			print_directory(inode_head);
-			inode_current->next = create_inode(path, S_IFDIR, 1, inode_current);
-			return retstat;
-			
-		// Move to next
-		} else {
-			inode_current = inode_current->next;
-		}
-		
-		
-	}
-    	
+     
+	insert_inode(path, S_IFDIR);
+
     return retstat;
 }
 
@@ -490,10 +466,7 @@ int sfs_rmdir(const char *path)
     log_msg("sfs_rmdir(path=\"%s\")\n",
 	    path);
     
-    // TEMPORARY: JUST CALL sfs_unlink ON THE DIRECTORY AS IF IT WERE A FILE
-    // REAL: RECURSIVELY FREE EACH SUBFOLDER AND FILE
-    
-    sfs_unlink(path);
+    delete_inode(path);
     
     return retstat;
 }
@@ -513,11 +486,12 @@ int sfs_opendir(const char *path, struct fuse_file_info *fi)
 	  path, fi);
     
     struct inode *inode_current = find_inode(path);
+	mode_t mode = inode_current->statbuf->st_mode;
 	
-	if (inode_current->statbuf->st_mode == S_IRWXU) {
+	if (mode == S_IFDIR | S_IRWXU) {
 		retstat = 0;
 	}
-	retstat = 0;
+
     return retstat;
 }
 
@@ -564,7 +538,8 @@ int sfs_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offse
 		}
 		
 		// Node is in directory
-		else if (strncmp(inode_current->path, path, strlen(inode_current->path)) == 0) {
+		else if ((S_ISDIR(inode_current->statbuf->st_mode)) &&
+		         (strncmp(inode_current->path, path, strlen(inode_current->path))) == 0) {
 			inode_current = inode_current->child;
 		}
 		
